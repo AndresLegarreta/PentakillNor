@@ -12,7 +12,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/registrar', registrarUsuario);
-
 router.post('/login', login )
 
 
