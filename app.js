@@ -10,6 +10,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 var ligasRouter = require('./routes/ligas');
+var partidosRouter = require('./routes/partidos');
+
 
 // Informacion base de datos
 const databaseURL = "mongodb+srv://andeslede:aurelio@clusterulsa.o04jks7.mongodb.net/";
@@ -34,6 +36,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/ligas', ligasRouter);
+app.use('/partidos', partidosRouter);
+
 
 
 // catch 404 and forward to error handler
