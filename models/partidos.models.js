@@ -16,8 +16,8 @@ const Partido = new mongoose.Schema({
         require:true
 
     },
-    ganaoperde: {
-        type: Number,
+    equipo1gp: {
+        type: Boolean,
         require:true
 
     }
