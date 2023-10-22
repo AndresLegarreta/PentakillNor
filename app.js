@@ -9,6 +9,11 @@ const mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
+var ligasRouter = require('./routes/ligas');
+var partidosRouter = require('./routes/partidos');
+var noticiasRouter = require('./routes/noticias');
+
+
 
 // Informacion base de datos
 const databaseURL = "mongodb+srv://andeslede:aurelio@clusterulsa.o04jks7.mongodb.net/";
@@ -32,6 +37,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
+app.use('/ligas', ligasRouter);
+app.use('/partidos', partidosRouter);
+app.use('/noticias', noticiasRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
