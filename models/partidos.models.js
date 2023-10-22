@@ -1,12 +1,27 @@
 const mongoose = require('mongoose');
 
 const Partido = new mongoose.Schema({
+    nombreleague: {
+        type: String,
+        require:true
+
+    },
     equipo1: {
         type: String,
         require:true
 
     },
+    equipo1res: {
+        type: String,
+        require:true
+
+    },
     equipo2: {
+        type: String,
+        require:true
+
+    },
+    equipo2res: {
         type: String,
         require:true
 
@@ -20,7 +35,18 @@ const Partido = new mongoose.Schema({
         type: String,
         require:true
 
-    }
+    },
+    gamenm: {
+        type: String,
+        require:true
+
+    },
+    nombrepartido: {
+        type: String,
+        require:true
+
+    },
+
 });
 
 const Matchlol = mongoose.model('partido', Partido);
