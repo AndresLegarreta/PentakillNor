@@ -12,6 +12,8 @@ const authRouter = require('./routes/auth');
 var ligasRouter = require('./routes/ligas');
 var partidosRouter = require('./routes/partidos');
 var noticiasRouter = require('./routes/noticias');
+var champsRouter = require('./routes/champ');
+
 
 
 
@@ -40,6 +42,8 @@ app.use('/auth', authRouter);
 app.use('/ligas', ligasRouter);
 app.use('/partidos', partidosRouter);
 app.use('/noticias', noticiasRouter);
+app.use('/champs', champsRouter);
+
 
 
 // catch 404 and forward to error handler
