@@ -61,3 +61,23 @@ exports.eliminarPartido = async (req, res) => {
         res.status(500).send(error);
     }
 };
+exports.leerPartidosPorFechaYLiga = async (req, res) => {
+    const fecha = new Date(req.query.fecha);
+    const nombreleague = req.query.nombreleague; 
+
+    try {
+        const partidos = await Matchlol.find({
+            fecha: fecha,
+            nombreleague: nombreleague 
+        });
+
+        if (!partidos || partidos.length === 0) {
+            return res.status(404).send({message: 'No se encontraron partidos para la fecha y liga especificadas'});
+        }
+
+        res.status(200).send(partidos);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+};
+
