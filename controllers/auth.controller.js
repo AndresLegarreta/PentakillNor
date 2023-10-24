@@ -26,7 +26,7 @@ async function firmarjwt (req,res){
 async function servicioPrueba(req, res){
     console.log("Entro a funcion");
     res.status(200).json(
-        {message:"hola"}
+        {message:"Verificado"}
     );
 }
 
