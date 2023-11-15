@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors')
 
 const mongoose = require('mongoose');
 
@@ -26,6 +27,9 @@ mongoose.connection.on('open', function(){
 
 var app = express();
 
+
+app.use(cors())
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -43,6 +47,8 @@ app.use('/ligas', ligasRouter);
 app.use('/partidos', partidosRouter);
 app.use('/noticias', noticiasRouter);
 app.use('/champ', champsRouter);
+
+
 
 
 
