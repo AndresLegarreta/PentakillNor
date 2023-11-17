@@ -4,7 +4,6 @@ const { firmarjwt, verifyjwt, servicioPrueba } = require('../controllers/auth.co
 
 /* GET home page. */
 router.post('/get-jwt', firmarjwt);
-router.post('/verify-jwt', verifyjwt); 
 router.post('/test', verifyjwt, servicioPrueba); 
 
 module.exports = router;
