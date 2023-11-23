@@ -11,9 +11,11 @@ async function registrarUsuario(req, res) {
         const newUser = await new User({
             username: usern,
             password: passw,
-            correouser: mail
+            correouser: mail,
+
         }).save();
         res.json({
+            message: 'Register OK',
             obj: newUser
         });
     } catch (err) {
