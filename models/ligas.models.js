@@ -10,6 +10,11 @@ const Liga = new mongoose.Schema({
         type: String,
         require:true
 
+    },
+    imagen: {
+        type: String,
+        require:true
+
     }
 });
 
