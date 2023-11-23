@@ -5,11 +5,13 @@ const { config } = require('../config/config');
 async function registrarUsuario(req, res) {
     const usern = req.body.us;
     const passw = req.body.pass;
+    const mail = req.body.correo
 
     try {
         const newUser = await new User({
             username: usern,
-            password: passw
+            password: passw,
+            correouser: mail
         }).save();
         res.json({
             obj: newUser
