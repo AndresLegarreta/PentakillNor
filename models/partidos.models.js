@@ -27,7 +27,7 @@ const Partido = new mongoose.Schema({
 
     },
     fecha: {
-        type: Date,
+        type: String,
         require:true
 
     },

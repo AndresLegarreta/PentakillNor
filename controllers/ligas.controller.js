@@ -4,9 +4,9 @@ exports.crearLiga = async (req, res) => {
     const liga = new League(req.body);
     try {
         await liga.save();
-        res.status(201).send(liga);
+        res.status(201).send({ liga, message: 'Liga creada con exito.' });
     } catch (error) {
-        res.status(400).send(error);
+        res.status(400).send({ error, message: 'Error al crear la liga.' });
     }
 };
 

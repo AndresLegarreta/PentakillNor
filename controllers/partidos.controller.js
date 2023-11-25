@@ -4,9 +4,9 @@ exports.crearPartido = async (req, res) => {
     const partido = new Matchlol(req.body);
     try {
         await partido.save();
-        res.status(201).send(partido);
+        res.status(201).send({partido, message: 'Partido creado con éxito.'});
     } catch (error) {
-        res.status(400).send(error);
+        res.status(400).send({ error, message: 'Error al crear el partido.' });
     }
 };
 
