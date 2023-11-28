@@ -17,6 +17,10 @@ const champSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    blurb: {
+        type: String,
+        required: true
+    },
 
     // Puedes agregar más atributos según lo necesites
 });
