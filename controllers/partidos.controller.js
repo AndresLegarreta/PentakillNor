@@ -12,7 +12,7 @@ exports.crearPartido = async (req, res) => {
 
 exports.leerPartidos = async (req, res) => {
     try {
-        const partidos = await Matchlol.find().populate("liga");
+        const partidos = await Matchlol.find().populate("nombreleague");
         res.status(200).send(partidos);
     } catch (error) {
         res.status(500).send(error);
@@ -62,12 +62,10 @@ exports.eliminarPartido = async (req, res) => {
     }
 };
 exports.leerPartidosPorFechaYLiga = async (req, res) => {
-    const fecha = new Date(req.query.fecha);
     const nombreleague = req.query.nombreleague; 
 
     try {
         const partidos = await Matchlol.find({
-            fecha: fecha,
             nombreleague: nombreleague 
         });
 
