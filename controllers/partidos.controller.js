@@ -12,7 +12,7 @@ exports.crearPartido = async (req, res) => {
 
 exports.leerPartidos = async (req, res) => {
     try {
-        const partidos = await Matchlol.find({});
+        const partidos = await Matchlol.find().populate("liga");
         res.status(200).send(partidos);
     } catch (error) {
         res.status(500).send(error);

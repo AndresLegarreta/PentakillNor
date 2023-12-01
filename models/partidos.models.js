@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const Partido = new mongoose.Schema({
     nombreleague: {
-        type: String,
+        type: mongoose.Schema.ObjectId,
+        ref: 'liga',
         require:true
 
     },
