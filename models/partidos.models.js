@@ -11,17 +11,7 @@ const Partido = new mongoose.Schema({
         require:true
 
     },
-    equipo1res: {
-        type: String,
-        require:true
-
-    },
     equipo2: {
-        type: String,
-        require:true
-
-    },
-    equipo2res: {
         type: String,
         require:true
 
