@@ -3,8 +3,8 @@ var router = express.Router();
 
 
 const {
-  registrarUsuario, login
-} = require('../controllers/user.controller.js')
+  registrarUsuario, login, obtenerUsuarios, obtenerUsuario, actualizarUsuario, eliminarUsuario
+} = require('../controllers/user.controller.js');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -12,7 +12,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/registrar', registrarUsuario);
-router.post('/login', login )
+router.post('/login', login );
+router.get('/', obtenerUsuarios);
+router.get('/:id', obtenerUsuario);
+router.put('/:id', actualizarUsuario);
+router.delete('/:id', eliminarUsuario);
 
 
 module.exports = router;

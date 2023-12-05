@@ -46,8 +46,59 @@ async function login(req, res) {
     }
 }
 
+// ... tus importaciones existentes ...
+
+// Obtener todos los usuarios
+async function obtenerUsuarios(req, res) {
+    try {
+        const users = await User.find();
+        res.json(users);
+    } catch (err) {
+        res.status(500).send('Error al obtener usuarios');
+    }
+}
+
+// Obtener un usuario por ID
+async function obtenerUsuario(req, res) {
+    try {
+        const user = await User.findById(req.params.id);
+        res.json(user);
+    } catch (err) {
+        res.status(500).send('Error al obtener el usuario');
+    }
+}
+
+// Actualizar un usuario
+async function actualizarUsuario(req, res) {
+    try {
+        const updatedUser = await User.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true }
+        );
+        res.json(updatedUser);
+    } catch (err) {
+        res.status(500).send('Error al actualizar usuario');
+    }
+}
+
+// Eliminar un usuario
+async function eliminarUsuario(req, res) {
+    try {
+        await User.findByIdAndDelete(req.params.id);
+        res.json({ message: 'Usuario eliminado' });
+    } catch (err) {
+        res.status(500).send('Error al eliminar usuario');
+    }
+}
+
 module.exports = {
     registrarUsuario,
-    login
+    login,
+    obtenerUsuarios,
+    obtenerUsuario,
+    actualizarUsuario,
+    eliminarUsuario
 };
+
 

@@ -6,11 +6,16 @@ const Noticias = new mongoose.Schema({
         require:true
 
     },
+    imagennot: {
+        type: String,
+        require:true
+
+    },
     link: {
         type: String,
         require:true
 
-    }
+    },
 });
 
 const Newslol = mongoose.model('noticias', Noticias);
