@@ -12,7 +12,8 @@ exports.listarNoticias = async (req, res) => {
 exports.crearNoticia = async (req, res) => {
     const nuevaNoticia = new NewsLol({
         nombrenot: req.body.nombrenot,
-        link: req.body.link
+        link: req.body.link,
+        imagennot: req.body.imagennot
     });
 
     try {
