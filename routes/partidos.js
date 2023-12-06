@@ -6,7 +6,7 @@ const {
     leerPartidoPorId, 
     actualizarPartido, 
     eliminarPartido,
-    leerPartidosPorFechaYLiga
+    leerPartidosPorLiga
 
 } = require('../controllers/partidos.controller.js');
 
