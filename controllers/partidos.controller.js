@@ -61,21 +61,15 @@ exports.eliminarPartido = async (req, res) => {
         res.status(500).send(error);
     }
 };
-exports.leerPartidosPorFechaYLiga = async (req, res) => {
-    const nombreleague = req.query.nombreleague; 
+exports.leerPartidosPorLiga = async (req, res) => {
+    const ligaId = req.query.ligaId; // Se obtiene el ID de la liga de los parámetros de consulta
 
     try {
-        const partidos = await Matchlol.find({
-            nombreleague: nombreleague 
-        });
-
-        if (!partidos || partidos.length === 0) {
-            return res.status(404).send({message: 'No se encontraron partidos para la fecha y liga especificadas'});
-        }
-
+        const partidos = await Matchlol.find({ nombreleague: ligaId }).populate("nombreleague");
         res.status(200).send(partidos);
     } catch (error) {
-        res.status(500).send(error);
+        res.status(500).send({ error, message: 'Error al obtener los partidos.' });
     }
 };
+
 

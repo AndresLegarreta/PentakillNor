@@ -15,7 +15,7 @@ router.get('/', leerPartidos);
 router.get('/:id', leerPartidoPorId);
 router.patch('/:id', actualizarPartido);
 router.delete('/:id', eliminarPartido);
-router.get('/porFechaYLiga', leerPartidosPorFechaYLiga);
+router.get('/porLiga', leerPartidosPorLiga);
 
 
 module.exports = router;
