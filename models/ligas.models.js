@@ -3,12 +3,14 @@ const mongoose = require('mongoose');
 const Liga = new mongoose.Schema({
     nombre: {
         type: String,
-        require:true
+        require:true,
+        index: true
 
     },
     region: {
         type: String,
-        require:true
+        require:true,
+        index: true
 
     },
     imagen: {

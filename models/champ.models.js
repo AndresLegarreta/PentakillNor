@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const champSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        index: true
     },
     role: {
         type: String,
@@ -11,7 +12,8 @@ const champSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: true
+        required: true,
+        index: true
     },
     image: {
         type: String,
@@ -19,7 +21,8 @@ const champSchema = new mongoose.Schema({
     },
     blurb: {
         type: String,
-        required: true
+        required: true,
+        index: true
     },
 
     // Puedes agregar más atributos según lo necesites

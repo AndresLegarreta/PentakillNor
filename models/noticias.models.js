@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const Noticias = new mongoose.Schema({
     nombrenot: {
         type: String,
-        require:true
+        require:true,
+        index: true
 
     },
     imagennot: {
