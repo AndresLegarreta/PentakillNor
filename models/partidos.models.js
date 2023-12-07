@@ -14,10 +14,20 @@ const Partido = new mongoose.Schema({
         index: true 
 
     },
+    equipo1imagen: {
+        type: String,
+        require:true,
+
+    },
     equipo2: {
         type: String,
         require:true,
         index: true 
+
+    },
+    equipo2imagen: {
+        type: String,
+        require:true,
 
     },
     fecha: {
