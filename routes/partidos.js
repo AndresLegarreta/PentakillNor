@@ -6,7 +6,8 @@ const {
     leerPartidoPorId, 
     actualizarPartido, 
     eliminarPartido,
-    leerPartidosPorLiga
+    leerPartidosPorLiga,
+    leerPrimerosTresPartidos
 
 } = require('../controllers/partidos.controller.js');
 
@@ -16,6 +17,7 @@ router.get('/:id', leerPartidoPorId);
 router.patch('/:id', actualizarPartido);
 router.delete('/:id', eliminarPartido);
 router.get('/porLiga', leerPartidosPorLiga);
+router.get('/primerosTres', leerPrimerosTresPartidos);
 
 
 module.exports = router;

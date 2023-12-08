@@ -74,5 +74,17 @@ exports.leerPartidosPorLiga = async (req, res) => {
         res.status(500).send({ error, message: 'Error al obtener los partidos.' });
     }
 };
+exports.leerPrimerosTresPartidos = async (req, res) => {
+    try {
+        const partidos = await Matchlol.find().limit(3).populate({
+            path: 'nombreleague',
+            select: 'nombre'
+        });
+        res.status(200).send(partidos);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+};
+
 
 
