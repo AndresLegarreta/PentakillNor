@@ -47,7 +47,7 @@ const Match = new mongoose.Schema({
     },
 });
 
-const Lol = mongoose.model('partidoand', Match);
+const Lol = mongoose.model('partidosand', Match);
 
 module.exports = {
     Lol
