@@ -18,7 +18,7 @@ exports.crearNoticia = async (req, res) => {
 
     try {
         await nuevaNoticia.save();
-        res.status(201).send(nuevaNoticia);
+        res.status(201).send({nuevaNoticia,message: 'Noticia creada con exito'});
     } catch (err) {
         res.status(500).send({ message: err.message });
     }

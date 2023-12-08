@@ -46,9 +46,7 @@ async function login(req, res) {
     }
 }
 
-// ... tus importaciones existentes ...
 
-// Obtener todos los usuarios
 async function obtenerUsuarios(req, res) {
     try {
         const users = await User.find();
