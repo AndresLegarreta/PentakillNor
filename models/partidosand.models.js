@@ -45,6 +45,10 @@ const Match = new mongoose.Schema({
         required: true,
         index: true
     },
+    matchImage: {
+        type: String,
+        required: true,
+    },
 });
 
 const Lol = mongoose.model('partidosands', Match);
